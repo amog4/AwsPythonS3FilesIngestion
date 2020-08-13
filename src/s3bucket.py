@@ -72,7 +72,7 @@ class s3bucket(object):
 
 if __name__ == '__main__':
     s = s3bucket(bucket_name=bucket_name)
-    #s.create_bucket(location='ap-south-1')
+    #s.create_bucket(location=location )
     s.bucket_exists()
 
 
