@@ -69,6 +69,30 @@ class s3bucket(object):
         return f
 
 
+    def uploadfile(self,data,key):
+
+        try:
+            client.put_object(
+                Body=data,
+                Bucket=self.bucket_name,
+                Key=key)
+            logging.info('insert file with key  {0}'.format(key))
+        except Exception as e:
+            logging.error('upload file error  {}'.format(e))
+
+
+    def deletefile(self,key):
+
+        try:
+            response = client.delete_object(
+                Bucket=self.bucket_name,
+                Key=key)
+            logging.info('deleted file {0}'.format(response))
+        except Exception as e:
+            logging.info('deleted file error {0}'.format(e))
+
+
+
 
 if __name__ == '__main__':
     s = s3bucket(bucket_name=bucket_name)
