@@ -69,11 +69,11 @@ class s3bucket(object):
         return f
 
 
-    def uploadfile(self,data,key):
+    def uploadfile(self,path ,key):
 
         try:
             self.client.upload_file(
-                Filename=data,
+                Filename=path ,
                 Bucket=self.bucket_name,
                 Key=key)
             logging.info('insert file with key  {0}'.format(key))
@@ -107,11 +107,6 @@ class s3bucket(object):
 
 
 
-"""if __name__ == '__main__':
-    s = s3bucket(bucket_name=bucket_name)
-    sd = s.create_bucket(location=location )
-    e = s.bucket_exists()
-    print(e)"""
 
 
 
