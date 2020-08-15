@@ -1,6 +1,6 @@
 filesupload:
     active: True
-    name: 'amogh-iam-data'
+    name: 'amogh_iam_data'
     descriptions : 'files upload data'
     schema : 'data'
 
